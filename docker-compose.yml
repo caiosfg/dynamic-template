@@ -1,0 +1,11 @@
+services:
+  apache:
+    container_name: php-model-apache
+    build:
+      context: .
+      dockerfile: ./docker-compose/Dockerfile
+    restart: always
+    ports:
+      - '80:80'
+    volumes:
+      - .:/var/www/html
