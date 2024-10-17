@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 import Aside from "@/components/Aside";
+import Footer from "@/components/Footer";
 
 const faSolid = localFont({
   src: "./fonts/fa-solid-900.woff2",
@@ -23,10 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={faSolid.className}
+        className={`${faSolid.className} bg-gray-200`}
       >
         <Aside />
         {children}
+        <Footer />
       </body>
     </html>
   );
