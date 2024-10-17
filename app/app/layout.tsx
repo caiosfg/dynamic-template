@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+import Aside from "@/components/Aside";
+
 const faSolid = localFont({
   src: "./fonts/fa-solid-900.woff2",
   weight: "400 700",
@@ -23,6 +25,7 @@ export default function RootLayout({
       <body
         className={faSolid.className}
       >
+        <Aside />
         {children}
       </body>
     </html>
