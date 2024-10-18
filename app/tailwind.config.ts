@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        'fasolid': ['"Fa solid", Helvetica Neue, Helvetica, Segoe UI, Arial, sans-serif']
+      }
     },
   },
   plugins: [],

@@ -25,3 +25,16 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer base {
+  @font-face {
+    font-family: Fa Solid;
+    font-weight: 400;
+    src: url(/fonts/fa-solid-900.woff2) format("woff");
+  }
+  @font-face {
+    font-family: Fa Solid;
+    font-weight: 500;
+    src: url(/fonts/fa-solid-900.woff2) format("woff");
+  }
+}
