@@ -21,7 +21,9 @@ export default function RootLayout({
         className="bg-gray-200 font-fasolid"
       >
         <Aside />
-        {children}
+          <div className="z-50">
+            {children}
+          </div>
         <Footer />
       </body>
     </html>
