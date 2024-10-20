@@ -23,6 +23,7 @@ export default function RootLayout({
         <Aside />
           <div className="z-50">
             {children}
+            <div id="modal-root"></div>
           </div>
         <Footer />
       </body>
