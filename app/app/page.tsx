@@ -3,6 +3,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import ListTask from "@/components/ListTask";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 async function getElements() {
 
@@ -24,19 +27,24 @@ export default async function Home() {
           transition={{ delay: 0.25 }}
         >
           <h1 className="text-black z-50">Oi testabdi i oa tneihjaijdn akbnejbains</h1>
-          <div>
-            {elementos.map(({id, title, url, thumbnailUrl}) => (
-              <Link href={`/edit?${id}`} key={id}>
-                <Image
-                  alt={title}
-                  src={thumbnailUrl}
-                  height={150}
-                  width={150}
-                  className="grid-cols-3"
-                />
-              </Link>
-            ))}
-          </div>
+          <Suspense fallback={<Loading />}>
+            <div className="flex flex-col">              
+              <div className="flex flex-col w-20 h-20 overflow-auto">
+                {elementos.map(({id, title, url, thumbnailUrl}) => (
+                  <Link href={`/edit?${id}`} key={id}>
+                    <Image
+                      alt={title}
+                      src={thumbnailUrl}
+                      height={150}
+                      width={150}
+                      className="grid-cols-3"
+                    />
+                  </Link>
+                ))}
+              </div>
+              <ListTask />
+            </div>
+          </Suspense>
         </motion.div>
       </AnimatePresence>
     </>
